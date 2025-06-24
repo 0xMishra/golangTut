@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+var middlename = "doe"
+
+func main() {
+	var age int
+	name := "John"
+	age = 19
+	fmt.Println(name, age)
+
+	// zero values
+	// string = ""
+	// int, float = 0
+	// boolean = 0
+
+	printName()
+
+	middlename := "yuan" // global variable shadowed
+	fmt.Println(middlename)
+}
+
+func printName() {
+	firstname := "michael"
+	fmt.Println(firstname + " " + middlename)
+}
