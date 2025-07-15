@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+	"slices"
+)
+
+func main() {
+	a := []int{1, 2, 3, 4, 5}
+	slice := a[2:4]
+	fmt.Println(len(slice), cap(slice))
+
+	slice = append(slice, 6, 7)
+	fmt.Println(slice)
+
+	sliceCopy := make([]int, len(slice))
+	copy(sliceCopy, slice)
+
+	sliceCopy = append(sliceCopy, 8)
+	fmt.Println("slice: ", slice)
+	fmt.Println("sliceCopy: ", sliceCopy)
+
+	var nilSlice []int
+	fmt.Println(nilSlice)
+
+	for i, v := range slice {
+		fmt.Printf("index: %d, value: %d", i, v)
+	}
+	fmt.Println("element at index 3 of slice: ", slice[3])
+	slice[3] = 50
+
+	if slices.Equal(sliceCopy, slice) {
+		fmt.Println("sliceCopy is equal to slice")
+	}
+
+	// 2D slices
+	twoD := make([][]int, 3)
+	fmt.Println(twoD)
+}

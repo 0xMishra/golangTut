@@ -1,0 +1,39 @@
+package main
+
+import "fmt"
+
+func main() {
+	var num [5]int
+	fmt.Println(num)
+
+	num[0] = 2
+	fmt.Println(num)
+
+	fruits := [3]string{"apple", "banana", "guava"}
+	fmt.Println("3rd element:", fruits[2])
+
+	originalArr := [4]int{1, 2, 3, 4}
+	copiedArr := originalArr
+	copiedArr[0] = 100
+	fmt.Println("original array:", originalArr)
+	fmt.Println("copied array:", copiedArr)
+
+	// iterating through an array
+	for i, v := range num {
+		fmt.Printf("index: %d, value: %d\n", i, v)
+	}
+
+	fmt.Println("Length of array num:", len(num))
+
+	// comparing arrays
+	fmt.Println("arrays are equal?", originalArr == copiedArr)
+
+	// multidimensional array
+	matrix := [3][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	}
+
+	fmt.Println(matrix)
+}
