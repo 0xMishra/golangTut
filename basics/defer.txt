@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func main() {
+	process(10)
+}
+
+func process(i int) {
+	defer fmt.Println(
+		"value of i:",
+		i,
+	) // value of i here is 10 at the moment when this statement was pushed onto the stack, thus it will print 10
+	defer fmt.Println("first defered statement executed")
+	defer fmt.Println("second defered statement executed")
+	defer fmt.Println("third defered statement executed")
+	i++
+	fmt.Println("normal statement executed")
+	fmt.Println("value of i:", i)
+}
