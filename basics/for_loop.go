@@ -1,0 +1,41 @@
+package main
+
+import "fmt"
+
+func forLoop() {
+	// simple iteration over a range of number
+	for i := 1; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	// iteration over a collection
+	nums := []int{1, 2, 3, 4, 5}
+	for index, value := range nums {
+		fmt.Printf("Index: %d, Value: %d\n", index, value)
+	}
+
+	// continue and break statements
+	for i := 0; i <= 10; i++ {
+		if i%2 == 0 {
+			continue
+		}
+		fmt.Println("Odd Number: ", i)
+		if i == 5 {
+			break
+		}
+	}
+
+	// nested loops
+	rows := 5
+	for i := 1; i <= rows; i++ {
+		for k := 1; k <= i; k++ {
+			fmt.Print("*")
+		}
+		fmt.Println("")
+	}
+
+	// shorthand for for i loop
+	for v := range 10 {
+		fmt.Println(10 - v)
+	}
+}

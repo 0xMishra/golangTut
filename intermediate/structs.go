@@ -1,0 +1,78 @@
+package main
+
+import "fmt"
+
+type PhoneHomeCell struct {
+	home string
+	cell string
+}
+
+type Person struct {
+	firstName     string
+	lastName      string
+	age           int
+	address       Address // struct embedding
+	PhoneHomeCell         // anonymous field
+}
+
+func (p Person) fullName() string {
+	return p.firstName + " " + p.lastName
+}
+
+func (p *Person) incrementAgeBy1() {
+	p.age++
+}
+
+type Address struct {
+	city    string
+	country string
+}
+
+func structs() {
+	p1 := Person{
+		lastName:  "Smith",
+		firstName: "Adam",
+		age:       32,
+		address: Address{
+			city:    "toronto",
+			country: "Canada",
+		},
+
+		PhoneHomeCell: PhoneHomeCell{
+			home: "1234",
+			cell: "9891",
+		},
+	}
+
+	// you can skip a property while initializing a struct
+	// here we skipped lastname
+	p2 := Person{
+		firstName: "Julia",
+		age:       22,
+	}
+
+	fmt.Println(
+		p1,
+		p2.lastName,
+	) /* if you print a property you skipped in the struct instance
+	then it won't throw an error - it would simply not print anything
+	*/
+
+	// anonymous structs
+	user := struct {
+		name  string
+		email string
+	}{
+		name:  "Harry",
+		email: "harry@gmail.com",
+	}
+
+	fmt.Println(user)
+	fmt.Println(p1.fullName())
+	p1.incrementAgeBy1()
+	fmt.Println(p1.age)
+	fmt.Println(p1.address.country)
+	fmt.Println(p1.cell) // no need to write PhoneHomeCell here as it is an anonymous field
+	// struct equality
+	fmt.Println(p1 == p2)
+}
