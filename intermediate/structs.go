@@ -1,4 +1,5 @@
-package main
+// Package intermediate contains intermediate concepts of golang
+package intermediate
 
 import "fmt"
 

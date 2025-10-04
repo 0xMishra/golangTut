@@ -1,4 +1,5 @@
-package main
+// Package basics contains basics of golang
+package basics
 
 import "fmt"
 

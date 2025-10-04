@@ -1,4 +1,5 @@
-package main
+// Package advanced contians advanced concepts of golang
+package advanced
 
 import (
 	"fmt"

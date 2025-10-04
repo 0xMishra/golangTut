@@ -1,4 +1,4 @@
-package main
+package basics
 
 const (
 	pui     = 3.14

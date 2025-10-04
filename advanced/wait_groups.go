@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"fmt"
@@ -18,7 +18,7 @@ func (w *Worker) PerformTask(wg *sync.WaitGroup) {
 	fmt.Printf("workerID %d finished %s.\n", w.ID, w.Task)
 }
 
-func main() {
+func waitGrpStruct() {
 	tasks := []string{"digging", "laying bricks", "painting"}
 	var wg sync.WaitGroup
 
